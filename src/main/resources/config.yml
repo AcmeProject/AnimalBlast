@@ -1,0 +1,51 @@
+#List of all possible animals, https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+#List of all possible items, https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+#List of all possible particles, https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Effect.html
+Cooldown: 10
+ItemCount: 1
+EffectTime: 0.5
+Velocity: 3
+Factor: 1.1
+KillTime: 1.7
+SpawnTNT: true
+CooldownMsg: '&cYou are still in cooldown!'
+LaunchSound: 'ENTITY_FIREWORK_LAUNCH'
+commands:
+  sheepy:
+    entity: 'SHEEP'
+    item: 'MUTTON'
+    particle: 'LAVA_POP'
+  cowy:
+    entity: 'COW'
+    item: 'RAW_BEEF'
+    particle: 'LAVA_POP'
+  ducky:
+    entity: 'CHICKEN'
+    item: 'RAW_CHICKEN'
+    particle: 'LAVA_POP'
+  piggy:
+    entity: 'PIG'
+    item: 'PORK'
+    particle: 'LAVA_POP'
+  pony:
+    entity: 'HORSE'
+    item: 'HAY_BLOCK'
+    particle: 'LAVA_POP'
+  squidy:
+    entity: 'SQUID'
+    item: 'EYE_OF_ENDER'
+    particle: 'SMOKE'
+  ghasty:
+    entity: 'GHAST'
+    item: 'OBSIDIAN'
+    particle: 'WITCH_MAGIC'
+  boatymcboatface:
+    entity: 'BOAT'
+    item: 'WOOD'
+    particle: 'LAVA_POP'
+  minecarty:
+    entity: 'MINECART_TNT'
+    item: 'ACTIVATOR_RAIL'
+    particle: 'LAVA_POP'
+#No touchy touch!
+config: 1
