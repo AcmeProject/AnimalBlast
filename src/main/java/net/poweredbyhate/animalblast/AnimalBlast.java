@@ -45,7 +45,7 @@ public class AnimalBlast extends JavaPlugin implements Listener {
                 return;
             }
             Entity e = p.getWorld().spawnEntity(p.getLocation(), EntityType.valueOf(getConfig().getString("commands."+cmd+".entity")));
-            e.setVelocity(p.getEyeLocation().getDirection().multiply(getConfig().getInt("Velocity")));
+            e.setVelocity(p.getEyeLocation().getDirection().normalize().multiply(getConfig().getInt("Velocity")));
             p.getWorld().playSound(p.getLocation(), Sound.valueOf(getConfig().getString("LaunchSound")),1,1);
             doTheThing(ev.getPlayer(), e, getConfig().getString("commands."+cmd+".item") , getConfig().getString("commands."+cmd+".particle"));
             p.setMetadata("animalBlast.cooldown", new FixedMetadataValue(this,true)); //ty md_5 for telling me about metadata
@@ -77,7 +77,7 @@ public class AnimalBlast extends JavaPlugin implements Listener {
             public void run() {
                 p.getWorld().playEffect(entity.getLocation(), Effect.valueOf(particle), 1);
                 for (int a = 0; a < getConfig().getInt("ItemCount"); a++) {
-                    entity.setVelocity(entity.getVelocity().multiply(getConfig().getInt("Factor")));
+                    entity.setVelocity(entity.getVelocity().normalize().multiply(getConfig().getInt("Factor")));
                     Item i = p.getWorld().dropItemNaturally(entity.getLocation(), new ItemStack(Material.valueOf(item),1));
                     i.setPickupDelay(Integer.MAX_VALUE);
                     cook(i,0,1);
